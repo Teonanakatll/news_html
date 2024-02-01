@@ -41,9 +41,12 @@ function browsersync() {
 }
 
 function scripts() {
-	return src(['app/js/*.js',
-							 'app/js/new.min.js',
-							  '!app/js/app.min.js'])
+	return src([
+							'app/js/new.min.js',
+
+							'app/js/*.js',
+							'app/libs/likely/likely.js',
+							'!app/js/app.min.js'])
 		.pipe(webpackStream({
 			mode: 'production',
 			performance: { hints: false },
