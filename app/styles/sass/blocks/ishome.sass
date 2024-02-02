@@ -30,9 +30,11 @@
 	&:hover, &:focus
 		// text-decoration: none
 		color: #fff
-
 	span
 		color: $accent
+	@include media-breakpoint-down(sm)
+		font-size: 19px
+		padding-left: $gutter/2
 
 .main-menu
 	// делаем по бокам 100px чтобы на мобильных устройствах ничего не мешало
@@ -87,6 +89,8 @@
 		transition: color .25s ease
 		&:hover
 			color: lighten(#5c6470, 10%)
+		@include media-breakpoint-down(sm)
+			padding-right: $gutter/2
 	.search-field
 		position: absolute
 		left: 0
@@ -153,10 +157,14 @@
 
 .top-ad
 	margin-bottom: $gutter
+	@include media-breakpoint-down(md)
+	margin-bottom: $gutter/2
 
 .container-fluid
 	max-width: 1346px
 	padding: 0 $gutter
+	@include media-breakpoint-down(md)
+		padding: 0 $gutter/2
 
 section
 	background-color: #fafafa
@@ -167,7 +175,13 @@ section
 		text-transform: uppercase
 		margin: 0
 		font-size: 23px
-		font-weight: 800
+		font-weight: 900
+
+//                                             first section (electronics items)
+.first-section
+	@include media-breakpoint-down(md)
+		padding-top: $gutter/2
+		padding-bottom: $gutter/2
 
 .item-title
 	min-height: 340px
@@ -182,7 +196,7 @@ section
 		h3
 			margin: 0
 			text-transform: uppercase
-			font-weight: 800
+			font-weight: 900
 			font-size: 19px
 			max-width: 450px
 		a
@@ -190,6 +204,16 @@ section
 			text-decoration: none
 			&:hover
 				text-decoration: underline
+	@include media-breakpoint-down(lg)
+		&-content
+			padding: 40px 30px
+
+// на sm разрешении сделаем растояния между итемами
+
+.g-0
+	.pattern
+		@include media-breakpoint-down(sm)
+			margin-bottom: $gutter/2
 
 .pattern
 	background-color: $dark
@@ -203,9 +227,13 @@ section
 		border: 1px solid #fff
 		inset: 0
 		opacity: 0
+	&:hover
 		&::before
-			opacity: 0.2
-			inset: 10px
+			opacity: 0.5
+			top: 10px
+			right: 10px
+			bottom: 10px
+			left: 10px
 		.overlay
 			&::before
 				opacity: 0.75
@@ -216,7 +244,6 @@ section
 	background-position: center
 	position: relative
 	display: block
-	z-index: 2
 	&::before
 		content: ''
 		background-color: $dark
@@ -252,9 +279,10 @@ section
 			opacity: .25
 
 .likely-custom
-	padding-left: 12px
-	.likely_button
-		padding-left: 120px
+	padding-left: 0px
+	margin-top: 15px
+	@include media-breakpoint-down(xl)
+		margin-top: 20px
 
 .likely .likely__widget
 	height: 25px
@@ -272,6 +300,8 @@ section
 	.likely__counter
 		display: none
 
+.fa-share-alt
+	padding-right: 5px
 
 
 .likely
@@ -284,3 +314,61 @@ section
 		top: 5.5px
 		left: 4px
 	
+//                                            second section (news items, asidebox)
+
+.second-section
+	padding: $gutter/2 0
+	@include media-breakpoint-down(lg)
+		padding: $gutter/2 0
+
+.news-wrap
+	padding-bottom: $gutter/2
+	.pattern
+		&::before
+			display: none
+	.overlay
+		&::before
+			opacity: 0.4
+
+.item-news
+	min-height: 280px
+	margin: $gutter/2 0
+	color: $text-color
+	&-content
+		border:
+			left: #dfdfdf 1px solid
+			bottom: #dfdfdf 1px solid
+		z-index: 1
+		position: absolute
+		bottom: 0
+		background-color: #fff
+		width: 80%
+		padding: $gutter
+		h3
+			font-size: 17px
+			font-weight: 900
+			line-height: 1.2
+			margin: 0
+	&:hover
+		h3
+			text-decoration: underline
+	@include media-breakpoint-down(md)
+		margin: $gutter/2 0 0
+
+.date                        //date
+	font-size: 13px
+	color: $accent
+	font-family: baron-g, sans-serif
+	font-weight: 900
+
+.aside-box                   //aside-box
+	margin-bottom: $gutter
+	text-align: center
+	.img-responsive
+		display: inline-block
+
+//                                third section (reviews)
+.third-section
+	background-color: $dark
+	@include media-breakpoint-down(lg)
+		padding: $gutter/2 0
