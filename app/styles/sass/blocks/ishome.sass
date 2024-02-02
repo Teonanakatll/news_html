@@ -361,14 +361,87 @@ section
 	font-family: baron-g, sans-serif
 	font-weight: 900
 
+//                                         third section (reviews)
+
 .aside-box                   //aside-box
 	margin-bottom: $gutter
 	text-align: center
 	.img-responsive
 		display: inline-block
 
-//                                third section (reviews)
 .third-section
+	// не работает
+	@include media-breakpoint-down(sm)
+		padding: $gutter 0 30px
+		> div > div > div:last-of-type
+			.col-item
+				border: 0
+				padding-bottom: 0
+				margin-bottom: 0
+
+.dark-section
+	margin: 30px 0
+	padding: $gutter*1.5 0
 	background-color: $dark
 	@include media-breakpoint-down(lg)
-		padding: $gutter/2 0
+		padding: $gutter*1.5 0 30px
+	h2
+		padding-left: 8px
+		padding-bottom: 5px
+		a
+			color: #fff
+
+.col-item
+	margin: 15px 0px 20px
+	a
+		img
+			@include media-breakpoint-down(lg)
+				margin-bottom: $gutter/2
+		text-decoration: none
+		transition: color .25s ease
+		// так как изображение айтема является ссылкой, но в айтеме существует ещё ссылка с количеством отзывов
+		// ссылка с названием статьи, мы не можем при :hover на изображение подчеркнуть текст заголовка.
+		// при клике на изображение с помощю js добавим класс .hover заголовку
+		&:hover, &.hover
+			text-decoration: underline
+	.item-comments
+		margin-top: 2px
+		.fa, .item-comments-count
+			color: #49505a
+		.fa
+			font-size: 12px
+			margin: 
+				left: 20px
+				right: 5px
+		.item-comments-count
+			&::after
+				left: -40px
+				opacity: 1
+			&:hover
+				color: #49505a
+		.date
+			display: inline-block
+			margin-top: 0
+	h4
+		font-size: 15px
+		font-weight: normal
+		margin: 0
+		line-height: 1.35
+		@include media-breakpoint-down(lg)
+			padding: 0 $gutter
+	.col-item-meta
+		margin: 
+			top: 6px
+			bottom: 8px
+		@include media-breakpoint-down(lg)
+			padding: 0 $gutter
+			margin-bottom: 5px
+	&.col-item-dark
+		a
+			color: #a4a7ab
+			&:hover, &.hover
+				color: #fff
+	@include media-breakpoint-down(md)
+		margin-bottom: $gutter
+		padding-bottom: $gutter
+		border-bottom: 1px solid rgba(#fff, 0.1)

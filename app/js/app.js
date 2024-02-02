@@ -55,6 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		$('.mobile-menu').stop().slideToggle()
 	})
 
+	// добавление .hover к заголовку айтема при :hover на изображение(index reviews)
+	$('.col-item').on('mouseenter', function() {
+		var ths = $(this)
+		var lnk = ths.closest('.col-item').find('h4 a')
+		lnk.addClass('hover')
+		console.log('true')
+	}).on('mouseleave', function() {
+		var ths = $(this)
+		var lnk = ths.closest('.col-item').find('h4 a')
+		lnk.removeClass('hover')
+		})
 
 	// $('.mobile-menu-button').click(function() {
 	// 	$('.mobile-menu .top-menu').toggleClass('visually-hidden').stop().slideToggle();
