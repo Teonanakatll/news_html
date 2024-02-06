@@ -156,9 +156,9 @@
 	overflow: hidden
 
 .top-ad
-	margin-bottom: $gutter
+	padding-bottom: $gutter
 	@include media-breakpoint-down(md)
-	margin-bottom: calc($gutter/2)
+		padding-bottom: calc($gutter/2)
 
 .container-fluid
 	max-width: 1346px
@@ -237,6 +237,7 @@ section
 		.overlay
 			&::before
 				opacity: 0.75
+
 	&-cat-header
 		&::before
 			display: none
@@ -497,6 +498,7 @@ section
 			a
 				color: $text-color
 				display: block
+				text-decoration: none
 			&:hover
 				a
 					color: $accent
@@ -653,3 +655,177 @@ nav.soc
 		&:hover
 			&::before
 				opacity: 0.4
+
+//                                      category .cat-list-first
+.cat-list-first
+	padding-top: $gutter
+	background-color: #f5f5f5
+
+.type-one-cat
+	background-color: transparent
+	padding-top: calc($gutter/2)
+	
+
+.cat-list
+	padding-top: $gutter
+	background-color: #fff
+	@include media-breakpoint-down(md)
+		padding-top: 0
+
+
+a.cat-list-item
+	color: $text-color
+	display: block
+	text-decoration: none
+	margin:
+		bottom: calc($gutter/1.5)
+		top: calc($gutter/1.5)
+	padding-bottom: 4px
+	border-bottom: 1px solid #dfdfdf
+	h2, h3
+		transition: color .25s ease
+		line-height: 1.2
+		font-size: 21px
+		font-weight: 800
+		margin-bottom: 3px
+	img
+		transition: opacity .25s easee
+		margin-bottom: 12px
+	p
+		font-size: 15.4px
+		margin-top: 10px
+	&:hover
+		h2, h3
+			color: $accent
+			text-decoration: underline
+		img
+			opacity: 0.75
+		.pattern
+			&::before
+				inset: 10px
+				opacity: 0.4
+	&:last-child
+		border-bottom: none
+
+.main-aside
+	margin-bottom: $gutter
+
+.lb-header
+	border-bottom: 2px solid $accent
+	padding-bottom: 5px
+
+.lb-header, .all-posts-header
+	font-size: 21px
+	text-align: left
+	font-weight: 800
+	margin: 0
+
+.all-posts-header
+	text-transform: uppercase
+	@include media-breakpoint-down(md)
+		margin-top: calc($gutter/2)
+
+.lb-item
+	position: relative
+	padding-left: 120px
+	background-color: #f0f0f0
+	margin-bottom: 2px
+	transition: background-color .25s ease
+	text-align: start
+	&:hover
+		background-color: $accent
+		.lb-catname
+			color: #fff
+	.lb-body
+		background-color: #f9f9f9
+		padding: 10px 15px
+		a
+			color: $text-color
+			transition: color .25s ease
+			&:hover
+				color: $accent
+	&-header
+		font-size: 14px
+		//                 может не премениться если элемент не блочный
+		line-height: 1.4
+		display: block
+		font-weight: 500
+	.date
+		display: inline-block
+		margin-left: 20px
+		color: #aaa
+		margin-top: 0
+	.item-comments
+		.fa
+			font-size: 12px
+			margin-right: 5px
+			color: #aaa
+		.items-comments-count
+			color: #aaa
+			&:hover
+				color: $accent
+				&::after
+					color: #aaa
+
+.lb-catname
+	position: absolute
+	left: 15px
+	top: 15px
+	transition: color .25s ease
+	color: #888
+	font-size: 14px
+	font-weight: 800
+	max-width: 90px
+	text-decoration: none
+	&:hover
+		text-decoration: underline
+	&:focus
+		color: #888
+
+.lb-footer
+	line-height: 1.2
+
+.pagination-section
+	padding: calc($gutter*2) 0
+	background-color: #f5f5f5
+	&-first
+		padding: $gutter 0
+		background: none
+		margin-bottom: $gutter
+		border-bottom: 1px solid #dfdfdf
+
+.pagination
+	padding-top: 12px
+	a, span
+		display: inline-block
+		margin-top: 5px
+		width: 42px
+		height: 42px
+		line-height: 40px
+		border: 2px solid #e5e5e5
+		border-radius: 10em
+		text-decoration: none
+		font-size: 18px
+		font-weight: 800
+		color: #666
+		transition: border-color .25s ease, color .25s ease
+	a
+		&:hover
+			border-color: $accent
+			color: $accent
+		&.pagination-left, &.pagination-right
+			color: $accent
+	span
+		// чтобы активная ссылка не дублировалась на саму себя она будет span (основы внутренней seo оптимизации)
+		&.active
+			border-color: $accent
+			color: $accent
+	.pagination-left, .pagination-right
+		border: none
+		font-size: 32px
+		width: 30px
+
+.cat-list-item:last-child
+	margin-bottom: 0
+	padding-bottom: 0
+
