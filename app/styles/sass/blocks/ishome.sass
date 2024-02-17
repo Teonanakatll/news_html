@@ -1004,7 +1004,7 @@ a.cat-list-item
 	&-header
 		font-size: 21px
 		font-weight: 800
-		margin: $gutter*1.5 0 $gutter/2 0
+		margin: calc($gutter*1.5) 0 calc($gutter/2) 0
 	ul, li
 		margin: 0
 		padding: 0
@@ -1020,4 +1020,16 @@ a.cat-list-item
 
 .comments
 	margin: $gutter 0
-//                                      likely on pahe   end
+//                                      likely on page   end
+//                                      about.html
+.header-about
+	text-align: center
+	h1, h2
+		font-family: baron-g, sans-serif
+		text-transform: lowercase
+	&::before
+		opacity: 1
+	.cat-header-block
+		background-color: rgba(#2c2f33, .8)
+		&::before
+			opacity: 0.12

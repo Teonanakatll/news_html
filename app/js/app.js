@@ -70,6 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	// $('.mobile-menu-button').click(function() {
 	// 	$('.mobile-menu .top-menu').toggleClass('visually-hidden').stop().slideToggle();
 	// })
-
+	$("body").prognroll({
+		height: 3,
+		color: "#ec1c1c",
+		custom: false
+	});
 
 });

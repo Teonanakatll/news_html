@@ -44,6 +44,7 @@ function scripts() {
 	return src([
 							'app/js/new.min.js',
 							'app/libs/likely/likely.js',
+							'app/libs/prognroll/prognroll.js',
 							
 							'app/js/*.js',
 							'!app/js/app.min.js'])
